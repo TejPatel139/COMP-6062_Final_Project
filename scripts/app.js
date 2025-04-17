@@ -31,7 +31,7 @@ new Vue({
     methods: {
       // Fetches a random user profile from the backend API
       getUser() {
-        fetch("http://comp6062.liamstewart.ca/random-user-profile")
+        fetch("https://comp6062.liamstewart.ca/random-user-profile")
           .then(res => res.json())
           .then(data => {
             // Updates user data from API response
@@ -47,7 +47,7 @@ new Vue({
       // Fetches weather information based on city, province, and country
       getWeather() {
         const { city, province, country } = this.weatherQuery;
-        const url = `http://comp6062.liamstewart.ca/weather-information?city=${city}&province=${province}&country=${country}`;
+        const url = `https://comp6062.liamstewart.ca/weather-information?city=${city}&province=${province}&country=${country}`;
         fetch(url)
           .then(response => response.json())
           .then(data => {
