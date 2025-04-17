@@ -1,0 +1,26 @@
+/* Set a light gray background for the whole page */
+body {
+    background-color: #f8f9fa;
+  }
+  
+  /* Style images inside cards */
+  .card img {
+    /* Add a blue border around the image */
+    border: 3px solid #007bff;
+    /* Make the image circular */
+    border-radius: 50%;
+  }
+  
+  /* Apply styles when screen width is 768px or less (mobile responsive) */
+  @media (max-width: 768px) {
+    /* Make the heading font size smaller on small screens */
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    /* Make images smaller on small screens */
+    .card img {
+      width: 100px;
+    }
+  }
+  
