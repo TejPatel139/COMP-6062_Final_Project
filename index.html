@@ -17,69 +17,75 @@
       <h1>Tej Patel - Student 1198877</h1>
     </header>
 
-    <!-- Random User Profile Section -->
-    <section class="mb-4">
-      <h2>Random User Profile</h2>
-      <div class="card text-center p-3">
-        <!-- Profile picture, data-bound from Vue -->
-        <img :src="user.picture" class="rounded mx-auto d-block" width="150" />
-        <!-- Display user name and age from Vue -->
-        <p><strong>Name:</strong> {{ user.name }}</p>
-        <p><strong>Age:</strong> {{ user.age }}</p>
-        <!-- Button to fetch a new random user -->
-        <button class="btn btn-primary" @click="getUser">New Profile</button>
-      </div>
-    </section>
-
-    <!-- Weather Information Section -->
-    <section class="mb-4">
-      <h2>Weather Information</h2>
-      <!-- Weather input form (city, province, country) -->
-      <form @submit.prevent="getWeather">
-        <div class="row g-2 mb-2">
-          <div class="col">
-            <input type="text" class="form-control" v-model="weatherQuery.city" placeholder="City">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" v-model="weatherQuery.province" placeholder="Province">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" v-model="weatherQuery.country" placeholder="Country">
-          </div>
-          <!-- Submit button -->
-          <div class="col-auto">
-            <button class="btn btn-success">Get Weather</button>
-          </div>
+    <main>
+      <!-- Random User Profile Section -->
+      <section class="mb-4">
+       <h2>Random User Profile</h2>
+        <div class="card text-center p-3">
+          <!-- Profile picture, data-bound from Vue -->
+          <img :src="user.picture" class="rounded mx-auto d-block" width="150" />
+          <!-- Display user name and age from Vue -->
+          <p><strong>Name:</strong> {{ user.name }}</p>
+          <p><strong>Age:</strong> {{ user.age }}</p>
+          <!-- Button to fetch a new random user -->
+          <button class="btn btn-primary" @click="getUser">New Profile</button>
         </div>
-      </form>
+      </section>
 
-      <!-- Display weather result if data is available -->
-      <div v-if="weather.temperature">
-        <p><strong>Temperature:</strong> {{ weather.temperature }}</p>
-        <p><strong>Wind:</strong> {{ weather.wind }}</p>
-        <p><strong>Description:</strong> {{ weather.description }}</p>
-      </div>
-    </section>
+      <!-- Weather Information Section -->
+      <section class="mb-4">
+        <h2>Weather Information</h2>
+        <!-- Weather input form (city, province, country) -->
+        <form @submit.prevent="getWeather">
+          <div class="row g-2 mb-2">
+            <div class="col">
+              <input type="text" class="form-control" v-model="weatherQuery.city" placeholder="City">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" v-model="weatherQuery.province" placeholder="Province">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" v-model="weatherQuery.country" placeholder="Country">
+            </div>
+            <!-- Submit button -->
+            <div class="col-auto">
+              <button class="btn btn-success">Get Weather</button>
+            </div>
+          </div>
+        </form>
 
-    <!-- Dictionary Section -->
-    <section>
-      <h2>Dictionary</h2>
-      <!-- Word input form -->
-      <form @submit.prevent="getDefinition">
-        <div class="input-group mb-2">
-          <input type="text" class="form-control" v-model="word" placeholder="Enter a word">
-          <button class="btn btn-secondary">Define</button>
+        <!-- Display weather result if data is available -->
+        <div v-if="weather.temperature">
+          <p><strong>Temperature:</strong> {{ weather.temperature }}</p>
+          <p><strong>Wind:</strong> {{ weather.wind }}</p>
+          <p><strong>Description:</strong> {{ weather.description }}</p>
         </div>
-      </form>
+      </section>
 
-      <!-- Display word definition if available -->
-      <div v-if="wordDefinition.word">
-        <p><strong>Word:</strong> {{ wordDefinition.word }}</p>
-        <p><strong>Phonetic:</strong> {{ wordDefinition.phonetic }}</p>
-        <p><strong>Definition:</strong> {{ wordDefinition.definition }}</p>
-      </div>
-    </section>
+      <!-- Dictionary Section -->
+      <section>
+        <h2>Dictionary</h2>
+        <!-- Word input form -->
+        <form @submit.prevent="getDefinition">
+          <div class="input-group mb-2">
+            <input type="text" class="form-control" v-model="word" placeholder="Enter a word">
+            <button class="btn btn-secondary">Define</button>
+          </div>
+        </form>
+
+        <!-- Display word definition if available -->
+        <div v-if="wordDefinition.word">
+          <p><strong>Word:</strong> {{ wordDefinition.word }}</p>
+          <p><strong>Phonetic:</strong> {{ wordDefinition.phonetic }}</p>
+          <p><strong>Definition:</strong> {{ wordDefinition.definition }}</p>
+        </div>
+      </section>
+    </main>
   </div>
+
+  <footer>
+    &copy; 2025 COMP-6062 Final Project
+  </footer>
 
   <!-- Vue.js (version 2) -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
